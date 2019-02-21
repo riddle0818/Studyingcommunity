@@ -2,7 +2,7 @@
 
 [w3school](https://www.w3schools.com/html/default.asp)
 
-## **Hyper Text Makkup Language ( _HTML_ )**
+## **Hyper Text Markup Language ( _HTML_ )**
 
 一種標記語言，告訴瀏覽器網頁展示的方式
 
