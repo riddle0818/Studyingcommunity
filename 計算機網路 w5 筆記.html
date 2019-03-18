@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:black;">
+<h1 style="color:white">計算機網路 W5 筆記</h1>
+<hr>
+<h2 style="color:white">1.NRZ</h2>
+<p style="color:white">
+(1.)永遠不會回到0<br>
+(2.)資料太長,容易出現同步問題,無法分辨999及1000<br>
+(3.)但是頻寬要求較低<br>
+<hr>
+<h2 style="color:white">2.RZ</h2>
+<p style="color:white">
+(1.)NRZ的改良版<br>
+(2.)有極性<br>
+(3.)會調整接收時間<sub>就是會自己調時間</sub><br>
+(4.)訊號改變準確,不容易出錯<br>
+(5.)頻寬需要兩倍<br>
+<hr>
+<h2 style="color:white">3.Manchester</h2>
+<p style="color:white">
+(1.)需要不斷的校準<sub>每一個位元</sub><br>
+(2.)訊號間一定改變<br>
+<hr>
+<h2 style="color:white">4.Different Manchester</h2>
+<p style="color:white">
+(1.)偵測有沒有改變<br>
+(2.1)No inversion: Next BIT is 1<br>
+(2.2)inversion: Next BIT is 0<br>
+<hr>
+<h2 style="color:white">5.AMI</h2>
+<p style="color:white">
+(1.)解決一大堆1<br>
+(2.)沒有兩倍的頻寬,對1不斷的編碼,勉強做到與Manchester類似的狀況<br>
+<hr>
+<h2 style="color:white">6.Pseudoternary</h2>
+<p style="color:white">
+(1.)以不停地轉換來解決一大堆0<br>
+<hr>
+<h2 style="color:white">7.Multilevel</h2>
+<p style="color:white">
+(1.)一次傳2個BIT-->要4個LEVEL<br>
+(2.)8B6T-->8個BIT一組-->避免一大堆0跟一大堆1<br>
+<hr>
+<h2 style="color:white">8.假設1GB沒辦法一次傳,那就分成4調同時傳<br>
+-->不想用這方法,除非你有更好的線材<br>
+->這裡用到的是平興處理的概念
+<hr>
+<h2 style="color:white">9.Multi-Transition MLT-3-->不斷改變訊號</h2>
+<hr>
+<h2 style="color:white">10.如何改變傳輸狀況</h2>
+<p style="color:white">加大頻寬-->大量資訊量改變-->但是都會有一部分有問題<br>
+<sub>除非用Manchester,自我同步可以處理問題</sub><br>
+<hr>
+<h2 style="color:white">11.針對線進行編碼</h2>
+<hr>
+<h2 style="color:white"><mark>12. 4B/5B + NRZ = Manchester</mark></h2>
+<p style="color:white">
+(1.)頻寬下降,但是效果差不多,而且可以傳遞全0獲全1的資訊<br>
+(2.)混和處理可達到類似的效果<br>
+(3.)8B/10B也可以以這種方式傳送<br>
+<hr>
+<h2 style="color:white">13.B8ZS</h2>
+<p style="color:white">
+(1.)8BIT都是0<br>
+(2.)打0打散-->000VB0VB-->特殊符號<br>
+<hr>
+<h2 style="color:white">14.PCM</h2>
+<p style="color:white">
+(1.)取樣很重要<br>
+(1.1)樣本越多,還原的東西越接近事實,誤差越小<br>
+(1.2)至少要超過最高頻率的兩倍<br>
+(1.3)樣本太少會無法還原<br>
+(2.)ˊ惡是不考慮壓縮的情況下<br>
+<hr>
+<h2 style="color:white">15.取樣-->量化-->四捨五入-->編碼-->接收端還原</h2>
+<p style="color:white">
+(1.)肯定有誤差<sub>四捨五入造成</sub><br>
+(2.)分越多層越好<br> 
+<hr>
+<h2 style="color:white">16.無窮多個點,就代表真實</h2>
+<hr>
+<h2 style="color:white">17.Delta Modulation</h2>
+<p style="color:white">
+(1.)只記錄差異<br>
+(2.)永遠只記0跟1<br>
+(3.)在記錄值得上方-->1<br>
+(4.)在記錄值得下方-->0<br>
+(5.)變換的當下用上一個值<br>
+<hr>
+<h2 style="color:white">18.DCM 做為紀錄的主流</h2>
+<hr>
+<h2 style="color:white">19.距離</h2>
+<p style="color:white">
+(1.)短距離-->平行傳輸-->8BIT一次一起傳<br>
+(2.)長距離-->序列傳輸-->8BIT一次傳一個<br>
+<hr>
+<h2 style="color:white">20.同步與非同步</h2>
+<p style="color:white">
+(1.)在同步的情況下,在指定的時間傳送一個Frame<sub>Frame代表的是一堆資料</sub><br>
+(2.)在非同步的情況下,以傳送特殊位元訊號作為開始與結束<br>
+<hr>
+<h2 style="color:white"><mark>CH05 類比訊號</mark></h2>
+<h2 style="color:white">1.類比訊號通常用於長距離傳輸</h2>
+<hr>
+<h2 style="color:white">2.結構</h2>
+<p style="color:white">
+(1.)Amplitude shift keying(ASK)震盪<br>
+(2.)Frequency shift keying(FSK)頻率<br>
+(3.)Phase shift keying(PSK)相位<br>
+(4.)三者可以相互混和,但是通常不會混和頻率<br>
+<hr>
+<h2 style="color:white">3.數位是編碼,類比是調變</h2>
+<hr>
+<h2 style="color:white">4.雙向分兩個頻率</h2>
+<hr>
+<h2 style="color:white">5.震盪幅度容易改變,但品質不好</h2>
+<hr>
+<h2 style="color:white">6.頻率穩定度高,不容易改變,但是對頻寬有要求</h2>
+
+
+
+
+</body>
+</html>
